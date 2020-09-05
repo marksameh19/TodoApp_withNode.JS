@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="text-align: center">Edit <%= task.title %></h2>
+      <div style="width: 70%; margin: 20px auto">
+        <form action="/tasks/<%= task.id%>?_method=PUT" method="POST">
+          <input
+            class="form-control"
+            style="margin: 10px"
+            type="text"
+            name="task[title]"
+            value="<%= task.title %>"
+          />
+          <textarea
+            name="task[body]"
+            cols="30"
+            rows="10"
+            class="form-control"
+            style="margin: 10px"
+          >
+<%= task.body %></textarea
+          >
+          <button style="margin: 10px" class="btn btn-block btn-lg btn-primary">
+            Update task
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

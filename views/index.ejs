@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Hello <%= currentUser.username %></h1>
+        <p class="lead">This is a list of all your tasks.</p>
+        <a class="btn btn-warning btn-lg" href="/tasks/new" role="button"
+          >Create new task</a
+        >
+        <a class="btn btn-danger btn-lg" href="/logout" role="button">Logout</a>
+      </div>
+      <% tasks.forEach(task => { %>
+      <div class="list-group">
+        <a
+          href="/tasks/<%= task._id %>"
+          class="list-group-item list-group-item-action"
+        >
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1"><%= task.title%></h5>
+            <small><%= task.date.toDateString()%></small>
+          </div>
+          <p class="mb-1"><%= task.body%></p>
+        </a>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

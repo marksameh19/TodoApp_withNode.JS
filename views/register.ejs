@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1 class="display-4">Register new user</h1>
+        <a class="btn btn-warning btn-md m-2" href="/login" role="button"
+          >Login to an existing user</a
+        >
+        <form method="POST" action="/register">
+          <div class="form-group">
+            <label for="exampleInputEmail1">User name</label>
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              id="exampleInputEmail1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Rewrite Password</label>
+            <input type="password" class="form-control" name="password2" />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

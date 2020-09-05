@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO APP</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4"><%= task.title%></h1>
+    <p class="lead"><%= task.date.toDateString() %></p>
+    <hr class="my-4">
+    <p><pre><%= task.body %></pre></p>
+    <a class="btn btn-warning btn-lg m-2" href="/tasks/<%= task._id %>/edit" role="button">Edit task</a>
+    <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-danger btn-lg m-2">Delete task</button>
+    </form>
+    <a class="btn btn-primary btn-lg m-2" href="/tasks/" role="button">View all tasks</a>
+  </div>
+</div>
+  </body>
+</html>
